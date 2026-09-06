@@ -1,0 +1,24 @@
+version: 2
+updates:
+# Dependabot pull requests are authored by app/dependabot, so they appear under
+# none of the GitHub mobile app's default filters -- not "Created by me", not
+# "Review requested". Assigning them puts them in "Assigned to me", which is a
+# near-default view rather than a search that has to be retyped.
+#
+# `reviewers` would have been the more natural key and no longer exists:
+# GitHub removed it from the Dependabot options reference. `assignees` remains,
+# and covers security updates as well as version updates.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "ci(deps)"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    open-pull-requests-limit: 5
+    assignees:
+      - "pmgledhill102"
