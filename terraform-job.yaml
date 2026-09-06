@@ -16,11 +16,9 @@ name: Terraform Job
 # having run against it; a pinned SHA makes adoption a reviewable pull request
 # in each caller.
 #
-# No access configuration is needed. Workflows in a PUBLIC repository are
-# callable from any repository, so the Settings -> Actions -> General -> Access
-# policy a private host would require does not apply -- GitHub refuses to set
-# one on a public repo at all. A private host carries that prerequisite, and it
-# is invisible from the workflow file, which is one good reason not to be one.
+# Prerequisite, invisible from this file: in this repository, Settings ->
+# Actions -> General -> Access must allow access from the repositories that
+# call it. Without it every caller fails to resolve this workflow.
 
 on:
   workflow_call:

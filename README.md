@@ -41,5 +41,6 @@ reaches every caller at once with none of their CI having run against it.
 pull request** — for example where its trust policy is pinned to the default
 branch — or wherever a pull request should not hold write credentials.
 
-**Prerequisite:** in this repository, Settings → Actions → General → Access
-must allow the repositories that call these workflows.
+**No access configuration is needed.** Workflows in a public repository are
+callable from any repository, so the access policy that a private repository
+would require does not apply here — GitHub rejects setting one at all.
