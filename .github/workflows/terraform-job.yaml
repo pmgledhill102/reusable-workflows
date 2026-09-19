@@ -71,7 +71,7 @@ on:
           not also be a Terraform upgrade -- take the upgrade separately.
         required: false
         type: string
-        default: "1.15.8"
+        default: "1.16.3"
 
       label:
         description: Short name for this root, used as the plan comment heading.
